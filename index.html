@@ -6,6 +6,10 @@
         <title>Basic HTML Tags &lt;&#8725;&gt; </title>
         <style>
 
+            html {
+                scroll-behavior: smooth;
+            }
+
             body {
                 font-family: Georgia, 'Times New Roman', Times, serif;
                 line-height: 1.6;
@@ -26,6 +30,7 @@
 
             dl {
                 padding: 0;
+                display: inline;
             }
 
             .flashcard {
@@ -63,11 +68,38 @@
                 border-radius: 4px;
             }
 
+            nav h5 {
+                background-color: slategrey;
+                color: azure;
+                width: 100%;
+                height: 19px;
+                padding: 2px;
+                margin: 2px;
+                display: inline;
+                border-radius: 7px;
+            }
+
+            nav h5:hover, a:hover {
+                background-color: azure;
+                color: #555;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            button {
+                background-color: lightslategrey;
+                color: blanchedalmond;
+                border-radius: 7px;
+            }
+
         </style>
     </head>
     <body>
         <section>
-            <h2>A brief history of HTML</h2>
+            <h2>A BRIEF HISTORY OF HTML</h2>
             <p>HTML was created by Tim Berners-Lee in 1991 to share 
                 documents over the World Wide Web. It has evolved through 
                 multiple versions, with HTML5 being the current standard.
@@ -80,10 +112,19 @@
         </section>
         
         <h1>HTML | Flashcards</h1>
+        <h4 id="nav">Tags by class: </h4> <nav>
+            <h5><a href="#structure-tags">Structure</a></h5>
+            <h5><a href="#meta-and-head">Meta & Head</a></h5>
+            <h5><a href="#content">Content</a></h5>
+            <h5><a href="#list">List</a></h5>
+            <h5><a href="#link-and-media">Link & Media</a></h5>
+            <h5><a href="#form-and-input">Form/Input</a></h5>
+            <h5><a href="#table">Table</a></h5>
+        </nav>
 
         <main>
-            <h3>Basic Structure Tags</h3>
-            <dl>
+            <h3>Structure Tags</h3>
+            <dl id="structure-tags">
                 <div class="flashcard">
                     <dt>&#60;!DOCTYPE&#62;</dt>
                     <dd>This tag tells the browser what version of HTML 
@@ -91,7 +132,8 @@
                         any <code>.html</code> file to avoid rendering issues 
                         or unexpected behaviour. Note: This tag isn't an HTML 
                         element, it's a declaration and for this reason, it 
-                        doesn't have a closing tag.
+                        doesn't have a closing tag. For HTML5, we use this: 
+                        <code>&#60;!DOCTYPE html&#62;</code>.
                     </dd>
                 </div>
 
@@ -107,15 +149,9 @@
                 <div class="flashcard">
                     <dt>&#60;head&#62;</dt>
                     <dd>
-                        This tag contains the metadata, links to stylesheets,
-                         and the page title. <!-- You can also nest a &#60;script&#62; tag 
-                        in the &#60;head&#62; tag. -->
+                        This tag contains the metadata, links to stylesheets, 
+                        and the page title.
                     </dd>
-                </div>
-
-                <div class="flashcard">
-                    <dt>&#60;title&#62;</dt>
-                    <dd>This sets the title shown on the browser tab.</dd>
                 </div>
 
                 <div class="flashcard">
@@ -126,12 +162,458 @@
                 </div>
 
                 <div class="flashcard">
+                    <dt>&#60;header&#62;</dt>
+                    <dd>The <header> element specifies a header for a document or section.
+                        The &#60;header&#62;element should be used as a container for introductory content.
+                        You can have several <header> elements in one document.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;nav&#62;</dt>
+                    <dd> element is intended for large blocks of navigation links. 
+                         However, not all links in a document should be inside a &#60;nav&#62; element! 
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;main&#62;</dt>
+                    <dd>&#60;The section element defines a section in a document.
+                        According to W3C's HTML5 documentation: "A section is a thematic grouping of content, typically with a heading."
+                        A Web site's home page could be split into sections for introduction, content, and contact information
+                    </dd>   
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;section&#62;</dt>
+                    <dd>The &#60;section&#60; element defines a section in a document.
+                        According to W3C's HTML5 documentation: "A section is a thematic grouping of content, typically with a heading."
+                        A Web site's home page could be split into sections for introduction, content, and contact information
+                    </dd>    
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;article&#62;</dt>
+                    <dd>The &#60;article&#60; element specifies independent, self-contained content.
+                        An article should make sense on its own, and it should be possible to read it independently from the rest of the web site.
+                        Examples of where an &#60;article&#60; element can be used:
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;aside&#62;</dt>
+                    <dd>The &#60;aside&#60; element defines some content aside from the content it is placed in (like a sidebar).
+                        The aside content should be related to the surrounding content.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;footer&#62;</dt>
+                    <dd>The &#60;footer&#60; element specifies a footer for a document or section.
+                        A &#60;footer&#60; element should contain information about its containing element.
+                        A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc.
+                        You can have several &#60;footer&#60; elements in one document.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;div&#62;</dt>
+                    <dd>The &#60;div&#62; element is a block-level element that is often used as a container for other HTML elements.
+                        The &#60;div&#62; element has no required attributes, but style and class are common.
+                        When used together with CSS, the &#60;div&#62; element can be used to style blocks of content.
+                    </dd>
+                </div>
+            </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
+            <h3>Meta & Head Tags</h3>
+            <dl id="meta-and-head">
+                <div class="flashcard">
+                    <dt>&#60;title&#62;</dt>
+                    <dd>This sets the title shown on the browser tab.</dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;meta&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;link&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;style&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;script&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;base&#62;</dt>
+                    <dd></dd>
+                </div>
+            </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
+            <h3>Content Tags</h3>
+            <dl id="content">
+                <div class="flashcard">
                     <dt>&#60;h1&#62; to &#60;h6&#62;</dt>
                     <dd>Heading tags, with &#60;h1&#62; as the largest and 
                         &#60;h6&#62; as the smallest.
                     </dd>
                 </div>
+
+                <div class="flashcard">
+                    <dt>&#60;p&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;br&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;hr&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;span&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;strong&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;b&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;em&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;i&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;mark&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;small&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;del&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;ins&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;blockquote&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;code&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;pre&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;abbr&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;cite&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;sup&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;sub&#62;</dt>
+                    <dd></dd>
+                </div>
             </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
+            <h3>List Tags</h3>
+            <dl id="list">
+                <div class="flashcard">
+                    <dt>&#60;ul&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;ol&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;li&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;dl&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;dt&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;dd&#62;</dt>
+                    <dd></dd>
+                </div>
+            </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
+            <h3>Link & Media Tags</h3>
+            <dl id="link-and-media">
+                <div class="flashcard">
+                    <dt>&#60;a&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;img&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;audio&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;video&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;source&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;iframe&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;embed&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;object&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;track&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;map&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;area&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;figure&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;figcaption&#62;</dt>
+                    <dd></dd>
+                </div>
+            </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
+            <h3>Form/Input Tags</h3>
+            <dl id="form-and-input">
+                <div class="flashcard">
+                    <dt>&#60;form&#62;</dt>
+                    <dd>HTML forms are used to collect user input.
+                        The &#60;form&#62; element defines an HTML form
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;input&#62;</dt>
+                    <dd>The &#60;input&#62; element is the most important 
+                        form element. 
+                        The &#60;input&#62; element has many variations, 
+                        depending on the type attribute.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;textarea&#62;</dt>
+                    <dd>The &#60;textarea&#62; element defines a multi-line 
+                        input field (a text area).
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;label&#62;</dt>
+                    <dd>The &#60;label&#62; tag defines a label for an 
+                        &#60;input&#62; element.
+                        The &#60;label&#62; element does not render as anything 
+                        special for the user. However, it provides a usability 
+                        improvement for mouse users, because if the user 
+                        clicks on the text within the &#60;label&#62; element, 
+                        it toggles the control. <br/>
+                        The <code>for</code> attribute of the &#60;label&#62; 
+                        tag should be equal to the <code>id</code> attribute of 
+                        the related element to bind them together.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;select&#62;</dt>
+                    <dd>The &#60;select&#62; element defines a drop-down list.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;optgroup&#62;</dt>
+                    <dd>The &#60;optgroup&#62; is used to group related options 
+                        in a drop-down list.
+                        If you have a long list of options, groups of related 
+                        options are easier to handle for a user.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;option&#62;</dt>
+                    <dd>The &#60;option&#62; elements defines the options to select.
+                        The list will normally show the first item as selected.
+                        You can add a selected attribute to define a predefined option.
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;button&#62;</dt>
+                    <dd>The &#60;button&#62; element defines a clickable button.                     
+                    </dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;fieldset&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;legend&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;datalist&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;output&#62;</dt>
+                    <dd></dd>
+                </div>
+            </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
+            <h3>Table Tags</h3>
+            <dl id="table">
+                <div class="flashcard">
+                    <dt>&#60;table&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;thead&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;tbody&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;tfoot&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;tr&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;td&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;th&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;caption&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;colgroup&#62;</dt>
+                    <dd></dd>
+                </div>
+
+                <div class="flashcard">
+                    <dt>&#60;col&#62;</dt>
+                    <dd></dd>
+                </div>
+            </dl>
+            <a href="#nav"><button type="button">Back to Navbar</button></a>
+
         </main>
 
         
@@ -140,11 +622,12 @@
             cards.forEach(card => {
                 const dt = card.querySelector('dt');
                 const dd = card.querySelector('dd');
+                
 
                 dt.addEventListener('click', () => {
                     dd.style.display = (dd.style.display === 'none' || dd.style.display === '') ? 'block' : 'none';
                 });
-            });
+            }); 
         </script>
         
     </body>
